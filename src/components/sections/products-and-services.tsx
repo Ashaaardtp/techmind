@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   BookOpen,
+  Building2,
   CalendarHeart,
   Globe,
   Table2,
@@ -13,11 +14,22 @@ const SERVICES = [
     group: "Jasa Pembuatan Website & Landing Page",
     title: "Website & Landing Page",
     description:
-      "Website bisnis & landing page promosi yang responsif, cepat, dan didesain khusus untuk meningkatkan konversi penjualan UMKM.",
-    bullets: ["Responsif & cepat dibuka di HP", "Didesain untuk konversi penjualan", "Garansi revisi 30 hari"],
+      "Landing page template siap pakai dari 250rb dan website bisnis yang responsif, cepat, dan dirancang untuk meningkatkan konversi penjualan UMKM.",
+    bullets: ["Template section sudah paten", "Harga mulai 250 ribu", "Garansi revisi 30 hari"],
     href: "/jasa-web",
     cta: "Detail Jasa Website",
     accent: "bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-300",
+  },
+  {
+    icon: Building2,
+    group: "Jasa Website Company Profile",
+    title: "Company Profile",
+    description:
+      "Website multi-halaman berbasis template untuk memperkuat citra bisnis — mulai dari Beranda, Tentang, Layanan, Portofolio, hingga Kontak. Ramah budget.",
+    bullets: ["5–12 halaman siap pakai", "Harga mulai 550 ribu", "Selesai dalam 3–7 hari"],
+    href: "/jasa-web#company-profile",
+    cta: "Lihat Paket Company Profile",
+    accent: "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-300",
   },
   {
     icon: CalendarHeart,
@@ -55,8 +67,8 @@ const SERVICES = [
 ];
 
 export function ProductsAndServices() {
-  const jasa = SERVICES.slice(0, 2);
-  const produk = SERVICES.slice(2);
+  const jasa = SERVICES.slice(0, 3);
+  const produk = SERVICES.slice(3);
 
   return (
     <section id="layanan" className="scroll-mt-20 bg-white py-20 sm:py-24 dark:bg-zinc-950">
@@ -84,7 +96,7 @@ export function ProductsAndServices() {
                 Layanan Jasa Digital
               </h3>
             </div>
-            <div className="mt-5 grid gap-6 md:grid-cols-2">
+            <div className="mt-5 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {jasa.map((item) => (
                 <ServiceCard key={item.title} item={item} />
               ))}

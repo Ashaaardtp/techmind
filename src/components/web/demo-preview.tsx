@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import {
+  Building2,
   CalendarHeart,
   Heart,
   MapPin,
@@ -21,6 +22,13 @@ const DEMOS = [
     icon: MonitorSmartphone,
     frame: "browser" as const,
     image: "/david-becker-crs2vlkSe98-unsplash.jpg",
+  },
+  {
+    id: "company",
+    label: "Company Profile",
+    icon: Building2,
+    frame: "browser" as const,
+    image: "/pawel-czerwinski-Y8Y_s90SK3A-unsplash.jpg",
   },
   {
     id: "invitation",
@@ -126,7 +134,9 @@ export function DemoPreview() {
               <span className="ml-2 flex-1 rounded-md bg-white px-3 py-1 text-[11px] text-zinc-400 dark:bg-zinc-900">
                 {active === "landing"
                   ? "https://brand-anda.com"
-                  : "https://katalog-umkm.com"}
+                  : active === "company"
+                    ? "https://perusahaan-anda.com"
+                    : "https://katalog-umkm.com"}
               </span>
             </div>
             <div className="relative aspect-[16/10] overflow-hidden">
@@ -157,6 +167,29 @@ export function DemoPreview() {
                     <button className="rounded-full border border-white/30 px-4 py-2 text-xs font-semibold text-white">
                       Lihat Katalog
                     </button>
+                  </div>
+                </div>
+              ) : active === "company" ? (
+                <div className="absolute inset-0 flex flex-col justify-center px-8 text-white sm:px-12">
+                  <span className="w-fit rounded-full bg-white/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest backdrop-blur">
+                    Company Profile
+                  </span>
+                  <p className="mt-4 max-w-sm text-2xl font-extrabold leading-tight sm:text-3xl">
+                    Cerita bisnis Anda dalam satu website yang rapi.
+                  </p>
+                  <p className="mt-3 max-w-xs text-xs text-zinc-300 sm:text-sm">
+                    Beranda, Tentang, Layanan, Portofolio, Kontak — dari template
+                    siap pakai, harga ramah budget.
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {["Tentang", "Layanan", "Portofolio", "Kontak"].map((page) => (
+                      <button
+                        key={page}
+                        className="rounded-full border border-white/30 px-4 py-2 text-xs font-semibold text-white"
+                      >
+                        {page}
+                      </button>
+                    ))}
                   </div>
                 </div>
               ) : (

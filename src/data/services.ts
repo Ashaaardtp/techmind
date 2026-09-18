@@ -8,8 +8,8 @@ export type WebService = {
   startingPrice: number;
   features: string[];
   deliverables: string[];
-  accent: "indigo" | "rose" | "sky";
-  icon: "monitor" | "mail" | "shopping-bag";
+  accent: "indigo" | "emerald" | "rose" | "sky";
+  icon: "monitor" | "building" | "mail" | "shopping-bag";
   demoUrl: string;
   waMessage: string;
 };
@@ -19,24 +19,49 @@ export const WEB_SERVICES: WebService[] = [
     id: "svc-landing",
     slug: "landing-page",
     name: "Landing Page Bisnis",
-    tagline: "Satu halaman, fokus konversi, siap jualan.",
+    tagline: "Satu halaman template siap pakai, fokus konversi.",
     description:
-      "Halaman promosi berkecepatan tinggi dengan copywriting menjual dan tombol langsung ke WhatsApp. Cocok untuk peluncuran produk, campaign, dan personal branding.",
-    sla: "2–4 hari kerja",
-    startingPrice: 850000,
+      "Landing page berbasis template dengan section yang sudah paten dan teruji — cepat jadi, harga terjangkau. Perlu section tambahan atau penyesuaian khusus? Tinggal request dengan biaya tambahan kecil.",
+    sla: "1–3 hari kerja",
+    startingPrice: 250000,
     features: [
       "Desain responsif mobile-first",
-      "Copywriting penjualan",
+      "Section paten: Hero, Layanan, CTA WhatsApp",
       "Tombol WhatsApp & form leads",
       "SEO dasar on-page",
-      "Hosting deployment gratis",
+      "Deployment + subdomain gratis",
+      "Request section tambahan & custom (add-on)",
     ],
-    deliverables: ["HTML5 + Tailwind CSS", "1 halaman", "3 section utama"],
+    deliverables: ["Template siap pakai", "1 halaman", "Section paten"],
     accent: "indigo",
     icon: "monitor",
     demoUrl: "#demo-landing",
     waMessage:
       "Halo TechMind, saya ingin membuat Landing Page Bisnis. Mohon info harga dan prosesnya.",
+  },
+  {
+    id: "svc-company-profile",
+    slug: "company-profile",
+    name: "Website Company Profile",
+    tagline: "Multi-halaman template untuk citra perusahaan.",
+    description:
+      "Company profile multi-halaman berbasis template dengan section yang sudah paten: Beranda, Tentang, Layanan, Portofolio, Kontak. Harga ramah, tanpa berjuta-juta. Penyesuaian spesifik tetap bisa via add-on.",
+    sla: "3–7 hari kerja",
+    startingPrice: 550000,
+    features: [
+      "Template multi-halaman (5–12 halaman)",
+      "Section paten: Beranda, Tentang, Layanan, Portofolio, Kontak",
+      "Tombol WhatsApp & form kontak/leads",
+      "SEO dasar on-page",
+      "Deployment + subdomain gratis",
+      "Halaman & request desain tambahan (add-on)",
+    ],
+    deliverables: ["Template siap pakai", "5–12 halaman", "Panduan update konten"],
+    accent: "emerald",
+    icon: "building",
+    demoUrl: "#demo-company-profile",
+    waMessage:
+      "Halo TechMind, saya ingin membuat Website Company Profile. Mohon info paket dan harganya.",
   },
   {
     id: "svc-invitation",
@@ -65,12 +90,13 @@ export const WEB_SERVICES: WebService[] = [
     id: "svc-custom",
     slug: "website-kustom",
     name: "Website Kustom",
-    tagline: "Company profile, katalog produk, hingga portal dinamis.",
+    tagline: "Dibangun dari nol, bukan template.",
     description:
-      "Website sesuai kebutuhan bisnis: company profile, katalog produk UMKM, portal berita, hingga sistem kustom. Dibangun dengan stack modern dan mudah dikelola.",
-    sla: "7–14 hari kerja",
-    startingPrice: 2500000,
+      "Website kustom yang dibangun dari nol — bukan template. Untuk kebutuhan unik seperti katalog dinamis, keranjang/e-commerce, portal berita, hingga sistem khusus. Estimasi menyesuaikan scope.",
+    sla: "7–21 hari kerja",
+    startingPrice: 5000000,
     features: [
+      "Dibangun dari nol sesuai kebutuhan",
       "Halaman tak terbatas",
       "Katalog produk & keranjang",
       "CMS konten mandiri",
@@ -82,7 +108,7 @@ export const WEB_SERVICES: WebService[] = [
     icon: "shopping-bag",
     demoUrl: "#demo-custom",
     waMessage:
-      "Halo TechMind, saya ingin membuat Website Kustom. Mohon info estimasi biaya dan durasi.",
+      "Halo TechMind, saya ingin membuat Website Kustom dari nol. Mohon info estimasi biaya dan durasi.",
   },
 ];
 
@@ -97,46 +123,98 @@ export type PricingTier = {
 
 export const LANDING_PRICING: PricingTier[] = [
   {
-    name: "Essential",
-    price: 850000,
+    name: "Starter",
+    price: 250000,
     priceNote: "sekali bayar",
-    tagline: "Mulai online dengan cepat.",
+    tagline: "Template siap pakai, langsung jalan.",
     features: [
       { label: "1 halaman responsif", included: true },
-      { label: "3 section utama", included: true },
+      { label: "Section paten: Hero, Layanan, CTA WhatsApp", included: true },
       { label: "Tombol WhatsApp", included: true },
       { label: "SEO dasar", included: true },
+      { label: "Deployment + subdomain gratis", included: true },
       { label: "Copywriting premium", included: false },
-      { label: "Animasi interaktif", included: false },
+      { label: "Section tambahan & animasi", included: false },
     ],
   },
   {
     name: "Professional",
-    price: 1500000,
+    price: 300000,
     priceNote: "sekali bayar",
-    tagline: "Paling dipilih untuk campaign produk.",
+    tagline: "Paling seimbang untuk campaign produk.",
     highlighted: true,
     features: [
       { label: "1 halaman responsif", included: true },
-      { label: "6 section utama", included: true },
+      { label: "Section paten + pilih warna & foto brand", included: true },
       { label: "Tombol WhatsApp & form leads", included: true },
-      { label: "SEO dasar", included: true },
-      { label: "Copywriting premium", included: true },
-      { label: "Animasi interaktif", included: true },
+      { label: "SEO dasar + OG tags", included: true },
+      { label: "Deployment + subdomain gratis", included: true },
+      { label: "Copywriting premium", included: false },
+      { label: "Section tambahan & animasi", included: false },
     ],
   },
   {
     name: "Premium",
-    price: 2500000,
+    price: 400000,
     priceNote: "sekali bayar",
-    tagline: "Untuk brand yang serius scale-up.",
+    tagline: "Tampilan paling maksimal.",
     features: [
       { label: "1 halaman responsif", included: true },
-      { label: "Section tak terbatas", included: true },
+      { label: "Section paten + custom warna, foto, teks", included: true },
       { label: "Tombol WhatsApp & form leads", included: true },
-      { label: "SEO lanjutan", included: true },
+      { label: "SEO lanjutan + OG tags", included: true },
+      { label: "Section tambahan (hingga 8) & animasi", included: true },
       { label: "Copywriting premium", included: true },
-      { label: "Animasi interaktif + revisi minor 30 hari", included: true },
+      { label: "Revisi minor 30 hari", included: true },
+    ],
+  },
+];
+
+export const COMPANY_PROFILE_PRICING: PricingTier[] = [
+  {
+    name: "Starter",
+    price: 550000,
+    priceNote: "sekali bayar",
+    tagline: "Company profile ringkas dan rapi.",
+    features: [
+      { label: "Template 5 halaman (Beranda, Tentang, Layanan, Portofolio, Kontak)", included: true },
+      { label: "Section paten siap pakai", included: true },
+      { label: "Tombol WhatsApp & form kontak", included: true },
+      { label: "SEO dasar", included: true },
+      { label: "Deployment + subdomain gratis", included: true },
+      { label: "Copywriting premium", included: false },
+      { label: "Halaman tambahan & desain custom", included: false },
+    ],
+  },
+  {
+    name: "Business",
+    price: 750000,
+    priceNote: "sekali bayar",
+    tagline: "Paling populer untuk UMKM berkembang.",
+    highlighted: true,
+    features: [
+      { label: "Template 8 halaman + Blog / Galeri", included: true },
+      { label: "Pilih warna, foto, dan penyesuaian teks", included: true },
+      { label: "Tombol WhatsApp & form leads", included: true },
+      { label: "SEO dasar + analytics", included: true },
+      { label: "Deployment + subdomain gratis", included: true },
+      { label: "Copywriting premium", included: false },
+      { label: "Halaman tambahan & desain custom", included: false },
+    ],
+  },
+  {
+    name: "Premium",
+    price: 950000,
+    priceNote: "sekali bayar",
+    tagline: "Company profile lengkap & profesional.",
+    features: [
+      { label: "Template 12 halaman, termasuk Blog & Galeri", included: true },
+      { label: "Penyesuaian penuh warna, foto, teks", included: true },
+      { label: "Form leads + analytics + pelatihan konten", included: true },
+      { label: "SEO lanjutan + OG tags", included: true },
+      { label: "Halaman tambahan & animasi (add-on)", included: true },
+      { label: "Copywriting premium", included: true },
+      { label: "Revisi minor 30 hari + custom domain", included: true },
     ],
   },
 ];

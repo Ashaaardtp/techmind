@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
+  Building2,
   CalendarHeart,
   CheckCircle2,
   Clock,
@@ -16,6 +17,7 @@ import { formatIDR, WA_MESSAGES, waLink } from "@/config";
 
 const ICONS = {
   monitor: MonitorSmartphone,
+  building: Building2,
   mail: CalendarHeart,
   "shopping-bag": Rocket,
 };
@@ -25,12 +27,16 @@ const VISUALS: Record<string, { src: string; alt: string }> = {
     src: "/david-becker-crs2vlkSe98-unsplash.jpg",
     alt: "Contoh landing page bisnis",
   },
+  "svc-company-profile": {
+    src: "/pawel-czerwinski-Y8Y_s90SK3A-unsplash.jpg",
+    alt: "Contoh website company profile",
+  },
   "svc-invitation": {
     src: "/mymind-tZCrFpSNiIQ-unsplash.jpg",
     alt: "Contoh undangan digital",
   },
   "svc-custom": {
-    src: "/pawel-czerwinski-Y8Y_s90SK3A-unsplash.jpg",
+    src: "/david-becker-crs2vlkSe98-unsplash.jpg",
     alt: "Contoh website kustom",
   },
 };
@@ -52,8 +58,8 @@ export function WebShowcase() {
               Kehadiran digital yang bikin bisnis dipercaya
             </h2>
             <p className="mt-4 text-zinc-400">
-              Dari landing page yang mengubah pengunjung jadi leads, hingga
-              undangan digital yang praktis dan elegan.
+              Landing page template siap pakai, company profile yang bikin
+              bisnis dipercaya, hingga undangan digital yang praktis dan elegan.
             </p>
           </div>
           <Link
@@ -65,7 +71,7 @@ export function WebShowcase() {
           </Link>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {WEB_SERVICES.map((service) => {
             const Icon = ICONS[service.icon];
             const visual = VISUALS[service.id];

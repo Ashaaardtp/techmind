@@ -22,6 +22,7 @@ export const WA_MESSAGES = {
   spreadsheet: `Halo ${SITE.name}, saya tertarik dengan template spreadsheet-nya. Bisa dibantu rekomendasi?`,
   customSheet: `Halo ${SITE.name}, saya ingin jasa kustomisasi template Google Sheets untuk SOP bisnis saya.`,
   landingPage: `Halo ${SITE.name}, saya ingin membuat Landing Page bisnis. Mohon info harga dan prosesnya.`,
+  companyProfile: `Halo ${SITE.name}, saya ingin membuat Website Company Profile. Mohon info paket dan harganya.`,
   invitation: `Halo ${SITE.name}, saya ingin membuat Undangan Digital. Mohon info paket dan contohnya.`,
   customWeb: `Halo ${SITE.name}, saya ingin membuat Website Kustom. Mohon info estimasi biaya dan durasi.`,
 } as const;

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, Check, Minus, Sparkles } from "lucide-react";
 import {
+  COMPANY_PROFILE_PRICING,
   INVITATION_PRICING,
   LANDING_PRICING,
   type PricingTier,
@@ -11,8 +12,22 @@ import { formatIDR, waLink } from "@/config";
 
 const PACKAGES = [
   { id: "landing", label: "Landing Page", tiers: LANDING_PRICING },
+  {
+    id: "company",
+    label: "Company Profile",
+    tiers: COMPANY_PROFILE_PRICING,
+  },
   { id: "invitation", label: "Undangan Digital", tiers: INVITATION_PRICING },
 ];
+
+const ADDON_NOTES: Record<string, string> = {
+  landing:
+    "Add-on: section tambahan Rp 50.000/section, copywriting premium Rp 100.000, desain sepenuhnya custom mulai Rp 200.000.",
+  company:
+    "Add-on: halaman tambahan Rp 100.000/halaman, copywriting premium Rp 150.000, desain custom mulai Rp 300.000.",
+  invitation:
+    "Add-on: custom domain Rp 150.000, tema tambahan Rp 100.000, galeri foto tambahan disesuaikan.",
+};
 
 export function PricingTable() {
   const [active, setActive] = useState("landing");
@@ -20,13 +35,13 @@ export function PricingTable() {
 
   return (
     <div>
-      <div className="mx-auto flex max-w-md items-center gap-2 rounded-2xl border border-zinc-200 bg-white p-1.5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+      <div className="mx-auto flex max-w-xl items-center gap-2 rounded-2xl border border-zinc-200 bg-white p-1.5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
         {PACKAGES.map((pkg) => (
           <button
             key={pkg.id}
             type="button"
             onClick={() => setActive(pkg.id)}
-            className={`flex-1 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
+            className={`flex-1 rounded-xl px-2 py-2.5 text-[13px] font-semibold transition-all sm:px-4 sm:text-sm ${
               active === pkg.id
                 ? "bg-brand-600 text-white shadow-md"
                 : "text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
@@ -43,6 +58,21 @@ export function PricingTable() {
           <TierCard key={tier.name} tier={tier} />
         ))}
       </div>
+
+      <p className="mt-6 rounded-2xl border border-dashed border-brand-300 bg-brand-50 px-4 py-3 text-center text-xs leading-relaxed text-brand-800 dark:border-brand-800 dark:bg-brand-950/40 dark:text-brand-200">
+        {ADDON_NOTES[current.id]} Butuh penyesuaian lain?{" "}
+        <a
+          href={waLink(
+            "Halo TechMind, saya ingin request penyesuaian paket website. Mohon info biaya tambahannya.",
+          )}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold underline"
+        >
+          Tanyakan via WhatsApp
+        </a>
+        .
+      </p>
 
       <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
         Semua harga adalah sekali bayar (one-time). Tidak ada biaya langganan

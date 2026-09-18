@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
+  Building2,
   CalendarHeart,
   CheckCircle2,
   Clock,
@@ -19,13 +20,14 @@ import { WEB_SERVICES } from "@/data/services";
 import { formatIDR, waLink } from "@/config";
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website, Landing Page & Undangan Digital",
+  title: "Jasa Pembuatan Website, Landing Page, Company Profile & Undangan Digital",
   description:
-    "Jasa pembuatan landing page konversi tinggi (2–4 hari), undangan digital interaktif (1–2 hari), dan website kustom untuk UMKM (7–14 hari). Garansi revisi 30 hari.",
+    "Landing page template siap pakai mulai 250rb, company profile multi-halaman ramah budget, undangan digital interaktif, dan website kustom dari nol. Garansi revisi 30 hari.",
 };
 
 const ICONS = {
   monitor: MonitorSmartphone,
+  building: Building2,
   mail: CalendarHeart,
   "shopping-bag": Rocket,
 };
@@ -40,11 +42,15 @@ const SLA_STEPS = [
 const WEB_FAQ = [
   {
     q: "Apakah saya mendapat file sumber website?",
-    a: "Ya. Untuk website kustom kami serahkan source code dan akses penuh. Untuk landing page dan undangan digital, Anda mendapat akses pengelolaan serta panduan video.",
+    a: "Ya. Untuk website kustom dari nol kami serahkan source code dan akses penuh. Untuk landing page, company profile, dan undangan digital berbasis template, Anda mendapat akses pengelolaan serta panduan video.",
   },
   {
     q: "Berapa lama proses pengerjaannya?",
-    a: "Landing page 2–4 hari kerja, undangan digital 1–2 hari kerja, dan website kustom 7–14 hari kerja setelah brief dan materi (teks/gambar) lengkap.",
+    a: "Landing page 1–3 hari kerja, undangan digital 1–2 hari kerja, company profile 3–7 hari kerja, dan website kustom 7–21 hari kerja setelah brief dan materi (teks/gambar) lengkap.",
+  },
+  {
+    q: "Kenapa harganya terjangkau?",
+    a: "Landing page dan company profile kami bangun dari template dengan section yang sudah paten dan teruji, jadi pengerjaannya cepat dan murah. Kebutuhan tambahan (section baru, copywriting, desain custom) tetap bisa dengan biaya add-on yang transparan.",
   },
   {
     q: "Apakah sudah termasuk domain dan hosting?",
@@ -73,9 +79,10 @@ export default function JasaWebPage() {
               bisnis Anda
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
-              Dari landing page yang mengubah pengunjung jadi pelanggan, undangan
-              digital yang praktis, hingga website kustom sesuai kebutuhan. Cepat,
-              rapi, dan tanpa drama teknis.
+              Landing page template siap pakai yang mengubah pengunjung jadi
+              pelanggan, company profile yang bikin bisnis dipercaya, undangan
+              digital yang praktis, hingga website kustom dari nol. Cepat, rapi,
+              harga terjangkau.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -97,7 +104,7 @@ export default function JasaWebPage() {
             </div>
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-zinc-400">
               <span className="inline-flex items-center gap-2">
-                <Clock className="size-4 text-brand-400" /> Landing page 2–4
+                <Clock className="size-4 text-brand-400" /> Landing page 1–3
                 hari
               </span>
               <span className="inline-flex items-center gap-2">
@@ -105,8 +112,8 @@ export default function JasaWebPage() {
                 30 hari
               </span>
               <span className="inline-flex items-center gap-2">
-                <Sparkles className="size-4 text-brand-400" /> Desain custom
-                profesional
+                <Sparkles className="size-4 text-brand-400" /> Desain template
+                paten + add-on
               </span>
             </div>
           </div>
