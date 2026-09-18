@@ -1,11 +1,12 @@
 export const SITE = {
   name: "TechMind Digital Service",
   shortName: "TechMind",
-  tagline: "Solusi Digital & Otomatisasi Operasional untuk UMKM",
+  tagline: "Solusi Digital Lengkap untuk Tumbuh Kembangkan UMKM Anda",
   description:
-    "Template spreadsheet siap pakai, undangan digital, landing page, dan website kustom untuk UMKM, profesional, agensi, dan event organizer.",
-  whatsappNumber: "6281234567890",
-  whatsappDisplay: "+62 812-3456-7890",
+    "Mitra solusi digital serba ada untuk UMKM: jasa pembuatan website & landing page, undangan digital, template spreadsheet otomatis, dan e-book edukasi.",
+  whatsappNumber: "6289509135859",
+  whatsappDisplay: "+62 895-0913-5859",
+  whatsappNumberLocal: "0895-0913-5859",
   email: "halo@techmind.id",
   instagram: "@techmind.digital",
   city: "Jakarta, Indonesia",

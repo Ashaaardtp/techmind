@@ -4,19 +4,19 @@ import { WA_MESSAGES, waLink } from "@/config";
 
 export default function NotFound() {
   return (
-    <section className="relative overflow-hidden bg-white">
-      <div className="pointer-events-none absolute inset-0 grid-pattern opacity-50" />
+    <section className="relative overflow-hidden bg-white dark:bg-zinc-950">
+      <div className="pointer-events-none absolute inset-0 grid-pattern opacity-50 dark:grid-pattern-dark" />
       <div className="relative mx-auto flex max-w-2xl flex-col items-center px-4 py-28 text-center sm:px-6">
-        <span className="grid size-16 place-items-center rounded-2xl bg-brand-50 text-brand-600">
+        <span className="grid size-16 place-items-center rounded-2xl bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-300">
           <Compass className="size-8" />
         </span>
-        <p className="mt-6 text-sm font-bold uppercase tracking-[0.2em] text-brand-600">
+        <p className="mt-6 text-sm font-bold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-400">
           Error 404
         </p>
-        <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl">
+        <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
           Halaman tidak ditemukan
         </h1>
-        <p className="mt-4 max-w-md text-zinc-600">
+        <p className="mt-4 max-w-md text-zinc-600 dark:text-zinc-400">
           Sepertinya halaman yang Anda cari sudah dipindahkan atau tidak pernah
           ada. Mari kembali ke jalur yang benar.
         </p>
@@ -31,7 +31,7 @@ export default function NotFound() {
             href={waLink(WA_MESSAGES.general)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-300 px-6 py-3.5 text-sm font-semibold text-zinc-800 transition-colors hover:bg-zinc-50"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-300 px-6 py-3.5 text-sm font-semibold text-zinc-800 transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800"
           >
             <MessageCircle className="size-4 text-emerald-600" /> Tanya via
             WhatsApp

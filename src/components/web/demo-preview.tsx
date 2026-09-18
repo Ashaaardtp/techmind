@@ -55,8 +55,8 @@ export function DemoPreview() {
               onClick={() => setActive(demo.id)}
               className={`inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all ${
                 isActive
-                  ? "bg-zinc-900 text-white shadow-md"
-                  : "border border-zinc-200 bg-white text-zinc-600 hover:border-zinc-300 hover:bg-zinc-50"
+                  ? "bg-zinc-900 text-white shadow-md dark:bg-white dark:text-zinc-900"
+                  : "border border-zinc-200 bg-white text-zinc-600 hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:border-zinc-600"
               }`}
               aria-pressed={isActive}
             >
@@ -116,14 +116,14 @@ export function DemoPreview() {
             </div>
           </div>
         ) : (
-          <div className="w-full max-w-3xl overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl">
-            <div className="flex items-center gap-2 border-b border-zinc-100 bg-zinc-50 px-4 py-3">
+          <div className="w-full max-w-3xl overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-900">
+            <div className="flex items-center gap-2 border-b border-zinc-100 bg-zinc-50 px-4 py-3 dark:border-zinc-800 dark:bg-zinc-800">
               <span className="flex gap-1.5">
                 <span className="size-3 rounded-full bg-rose-400" />
                 <span className="size-3 rounded-full bg-amber-400" />
                 <span className="size-3 rounded-full bg-emerald-400" />
               </span>
-              <span className="ml-2 flex-1 rounded-md bg-white px-3 py-1 text-[11px] text-zinc-400">
+              <span className="ml-2 flex-1 rounded-md bg-white px-3 py-1 text-[11px] text-zinc-400 dark:bg-zinc-900">
                 {active === "landing"
                   ? "https://brand-anda.com"
                   : "https://katalog-umkm.com"}
@@ -204,13 +204,13 @@ export function DemoPreview() {
           return (
             <div
               key={item.label}
-              className="rounded-2xl border border-zinc-200 bg-white p-4 text-center"
+              className="rounded-2xl border border-zinc-200 bg-white p-4 text-center dark:border-zinc-800 dark:bg-zinc-900"
             >
-              <Icon className="mx-auto size-5 text-brand-600" />
-              <p className="mt-2 text-sm font-bold text-zinc-900">
+              <Icon className="mx-auto size-5 text-brand-600 dark:text-brand-400" />
+              <p className="mt-2 text-sm font-bold text-zinc-900 dark:text-white">
                 {item.label}
               </p>
-              <p className="text-xs text-zinc-500">{item.desc}</p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400">{item.desc}</p>
             </div>
           );
         })}

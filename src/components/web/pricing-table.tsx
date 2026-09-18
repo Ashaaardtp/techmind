@@ -20,7 +20,7 @@ export function PricingTable() {
 
   return (
     <div>
-      <div className="mx-auto flex max-w-md items-center gap-2 rounded-2xl border border-zinc-200 bg-white p-1.5 shadow-sm">
+      <div className="mx-auto flex max-w-md items-center gap-2 rounded-2xl border border-zinc-200 bg-white p-1.5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
         {PACKAGES.map((pkg) => (
           <button
             key={pkg.id}
@@ -29,7 +29,7 @@ export function PricingTable() {
             className={`flex-1 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
               active === pkg.id
                 ? "bg-brand-600 text-white shadow-md"
-                : "text-zinc-600 hover:bg-zinc-100"
+                : "text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
             }`}
             aria-pressed={active === pkg.id}
           >
@@ -44,7 +44,7 @@ export function PricingTable() {
         ))}
       </div>
 
-      <p className="mt-6 text-center text-xs text-zinc-500">
+      <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
         Semua harga adalah sekali bayar (one-time). Tidak ada biaya langganan
         tersembunyi. Butuh penyesuaian?{" "}
         <a
@@ -53,7 +53,7 @@ export function PricingTable() {
           )}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold text-brand-600 hover:text-brand-700"
+          className="font-semibold text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300"
         >
           Hubungi kami
         </a>
@@ -69,7 +69,7 @@ function TierCard({ tier }: { tier: PricingTier }) {
       className={`relative flex flex-col rounded-3xl border bg-white p-7 transition-all ${
         tier.highlighted
           ? "border-brand-500 shadow-xl shadow-brand-600/10 lg:-translate-y-2"
-          : "border-zinc-200 hover:shadow-lg"
+          : "border-zinc-200 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900"
       }`}
     >
       {tier.highlighted && (
@@ -77,10 +77,10 @@ function TierCard({ tier }: { tier: PricingTier }) {
           <Sparkles className="size-3" /> PALING DIPILIH
         </span>
       )}
-      <h3 className="text-lg font-bold text-zinc-900">{tier.name}</h3>
-      <p className="mt-1 text-sm text-zinc-500">{tier.tagline}</p>
+      <h3 className="text-lg font-bold text-zinc-900 dark:text-white">{tier.name}</h3>
+      <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{tier.tagline}</p>
       <div className="mt-5">
-        <p className="text-3xl font-extrabold tracking-tight text-zinc-900">
+        <p className="text-3xl font-extrabold tracking-tight text-zinc-900 dark:text-white">
           {formatIDR(tier.price)}
         </p>
         <p className="text-xs text-zinc-500">{tier.priceNote}</p>
@@ -94,7 +94,11 @@ function TierCard({ tier }: { tier: PricingTier }) {
               <Minus className="mt-0.5 size-4 shrink-0 text-zinc-300" />
             )}
             <span
-              className={feature.included ? "text-zinc-700" : "text-zinc-400"}
+              className={
+                feature.included
+                  ? "text-zinc-700 dark:text-zinc-300"
+                  : "text-zinc-400 dark:text-zinc-500"
+              }
             >
               {feature.label}
             </span>
@@ -110,9 +114,9 @@ function TierCard({ tier }: { tier: PricingTier }) {
         target="_blank"
         rel="noopener noreferrer"
         className={`group mt-7 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition-all ${
-          tier.highlighted
-            ? "bg-brand-600 text-white hover:bg-brand-700"
-            : "border border-zinc-300 bg-white text-zinc-800 hover:border-zinc-400 hover:bg-zinc-50"
+            tier.highlighted
+              ? "bg-brand-600 text-white hover:bg-brand-700"
+              : "border border-zinc-300 bg-white text-zinc-800 hover:border-zinc-400 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:border-zinc-600 dark:hover:bg-zinc-800"
         }`}
       >
         Pilih Paket

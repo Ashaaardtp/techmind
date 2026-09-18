@@ -10,7 +10,7 @@ export function WhatsAppFloat() {
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3 print:hidden">
       {open && (
-        <div className="w-72 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl">
+        <div className="w-72 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-900">
           <div className="flex items-center gap-3 bg-emerald-500 px-4 py-3 text-white">
             <span className="grid size-9 place-items-center rounded-full bg-white/20">
               <MessageCircle className="size-5" />
@@ -21,7 +21,7 @@ export function WhatsAppFloat() {
             </div>
           </div>
           <div className="space-y-3 p-4">
-            <p className="rounded-2xl rounded-tl-sm bg-zinc-100 px-3 py-2 text-sm text-zinc-700">
+            <p className="rounded-2xl rounded-tl-sm bg-zinc-100 px-3 py-2 text-sm text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
               Halo! Ada yang bisa kami bantu? Pilih topik di bawah ya.
             </p>
             <div className="flex flex-col gap-2">
@@ -29,7 +29,7 @@ export function WhatsAppFloat() {
                 href={waLink(WA_MESSAGES.spreadsheet)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-xl border border-zinc-200 px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50"
+                className="rounded-xl border border-zinc-200 px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-emerald-500/60 dark:hover:bg-emerald-950/40"
               >
                 Tanya Template Spreadsheet
               </a>
@@ -37,7 +37,7 @@ export function WhatsAppFloat() {
                 href={waLink(WA_MESSAGES.landingPage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-xl border border-zinc-200 px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-indigo-300 hover:bg-indigo-50"
+                className="rounded-xl border border-zinc-200 px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-indigo-300 hover:bg-indigo-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-indigo-500/60 dark:hover:bg-indigo-950/40"
               >
                 Konsultasi Jasa Website
               </a>
@@ -45,7 +45,7 @@ export function WhatsAppFloat() {
                 href={waLink(WA_MESSAGES.customSheet)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-xl border border-zinc-200 px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-violet-300 hover:bg-violet-50"
+                className="rounded-xl border border-zinc-200 px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-violet-300 hover:bg-violet-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-violet-500/60 dark:hover:bg-violet-950/40"
               >
                 Kustomisasi Google Sheets
               </a>

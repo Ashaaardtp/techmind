@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { AtSign, Mail, MapPin, MessageCircle, Sparkles } from "lucide-react";
+import { AtSign, Mail, MapPin, MessageCircle } from "lucide-react";
 import { SITE, WA_MESSAGES, waLink } from "@/config";
 
 const FOOTER_LINKS = [
@@ -51,17 +52,16 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
           <div>
-            <Link href="/" className="flex items-center gap-2.5">
-              <span className="grid size-9 place-items-center rounded-xl bg-gradient-to-br from-brand-600 to-violet-600 text-white">
-                <Sparkles className="size-5" />
-              </span>
-              <span className="flex flex-col leading-none">
-                <span className="text-base font-extrabold tracking-tight text-white">
-                  TechMind
-                </span>
-                <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
-                  Digital Service
-                </span>
+            <Link href="/" className="flex w-fit items-center" aria-label={SITE.name}>
+              <span className="grid place-items-center rounded-xl bg-white p-1 ring-1 ring-zinc-800">
+                <Image
+                  src="/techmind.jpg"
+                  alt={`Logo ${SITE.name}`}
+                  width={1280}
+                  height={1280}
+                  sizes="auto"
+                  className="h-10 w-auto"
+                />
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-400">

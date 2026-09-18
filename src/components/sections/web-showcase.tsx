@@ -46,7 +46,7 @@ export function WebShowcase() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-400">
-              <Globe className="size-4" /> Pilar 2 — Jasa Website
+              <Globe className="size-4" /> Layanan Jasa — Website &amp; Landing Page
             </span>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
               Kehadiran digital yang bikin bisnis dipercaya

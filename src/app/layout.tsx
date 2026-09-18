@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://techmind.id"),
   title: {
-    default: `${SITE.name} — Template Spreadsheet & Jasa Website UMKM`,
+    default: `${SITE.name} — Solusi Digital Lengkap untuk UMKM`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
@@ -32,18 +32,19 @@ export const metadata: Metadata = {
     "jasa landing page",
     "jasa website umkm",
     "otomatisasi operasional",
+    "ebook rumus excel",
   ],
   authors: [{ name: SITE.name }],
   openGraph: {
     type: "website",
     locale: "id_ID",
     siteName: SITE.name,
-    title: `${SITE.name} — Solusi Digital & Otomatisasi Operasional`,
+    title: `${SITE.name} — ${SITE.tagline}`,
     description: SITE.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} — Solusi Digital & Otomatisasi Operasional`,
+    title: `${SITE.name} — ${SITE.tagline}`,
     description: SITE.description,
   },
 };
@@ -54,7 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="id"
       className={`${plusJakarta.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-zinc-900">
+      <body className="min-h-full flex flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

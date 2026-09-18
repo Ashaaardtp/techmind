@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/sections/hero";
-import { PillarSwitcher } from "@/components/sections/pillar-switcher";
+import { AboutUs } from "@/components/sections/about";
+import { ProductsAndServices } from "@/components/sections/products-and-services";
+import { WhyUs } from "@/components/sections/why-us";
 import { FeaturedTemplates } from "@/components/sections/featured-templates";
 import { WebShowcase } from "@/components/sections/web-showcase";
 import { HowItWorks } from "@/components/sections/how-it-works";
@@ -9,16 +11,18 @@ import { Faq } from "@/components/sections/faq";
 import { CtaBand } from "@/components/sections/cta-band";
 
 export const metadata: Metadata = {
-  title: "Template Spreadsheet & Jasa Website untuk UMKM",
+  title: "Solusi Digital Lengkap untuk Tumbuh Kembangkan UMKM Anda",
   description:
-    "TechMind Digital Service menyediakan template spreadsheet siap pakai dan jasa pembuatan landing page, undangan digital, serta website kustom untuk UMKM dan event organizer.",
+    "Techmind.id — all-in-one digital solution untuk UMKM: jasa pembuatan website & landing page, undangan digital, template spreadsheet otomatis, dan e-book edukasi.",
 };
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <PillarSwitcher />
+      <AboutUs />
+      <ProductsAndServices />
+      <WhyUs />
       <FeaturedTemplates />
       <WebShowcase />
       <HowItWorks />

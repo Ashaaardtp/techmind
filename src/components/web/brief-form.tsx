@@ -41,17 +41,17 @@ export function BriefForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8"
+      className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8 dark:border-zinc-800 dark:bg-zinc-900"
     >
       <div className="flex items-center gap-3">
-        <span className="grid size-11 place-items-center rounded-xl bg-brand-100 text-brand-700">
+        <span className="grid size-11 place-items-center rounded-xl bg-brand-100 text-brand-700 dark:bg-brand-950/60 dark:text-brand-300">
           <ClipboardList className="size-5" />
         </span>
         <div>
-          <h3 className="text-lg font-bold text-zinc-900">
+          <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
             Ajukan Brief Proyek Anda
           </h3>
-          <p className="text-sm text-zinc-500">
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">
             Isi detail berikut agar kami bisa memberi rekomendasi tepat.
           </p>
         </div>
@@ -144,7 +144,7 @@ export function BriefForm() {
 }
 
 const inputClass =
-  "w-full rounded-xl border border-zinc-200 bg-white px-3.5 py-2.5 text-sm text-zinc-800 outline-none transition-colors placeholder:text-zinc-400 focus:border-brand-400 focus:ring-2 focus:ring-brand-100";
+  "w-full rounded-xl border border-zinc-200 bg-white px-3.5 py-2.5 text-sm text-zinc-800 outline-none transition-colors placeholder:text-zinc-400 focus:border-brand-400 focus:ring-2 focus:ring-brand-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-brand-500";
 
 function Field({
   label,
@@ -159,7 +159,7 @@ function Field({
 }) {
   return (
     <label className={`flex flex-col gap-1.5 text-sm ${className}`}>
-      <span className="font-medium text-zinc-700">
+      <span className="font-medium text-zinc-700 dark:text-zinc-300">
         {label}
         {required && <span className="text-rose-500"> *</span>}
       </span>

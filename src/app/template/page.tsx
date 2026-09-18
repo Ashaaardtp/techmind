@@ -35,18 +35,18 @@ export default async function TemplatePage(props: PageProps<"/template">) {
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-zinc-200 bg-zinc-50">
-        <div className="pointer-events-none absolute inset-0 grid-pattern opacity-50" />
-        <div className="pointer-events-none absolute -right-24 -top-24 size-96 rounded-full bg-emerald-200/40 blur-3xl" />
+      <section className="relative overflow-hidden border-b border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/40">
+        <div className="pointer-events-none absolute inset-0 grid-pattern opacity-50 dark:grid-pattern-dark" />
+        <div className="pointer-events-none absolute -right-24 -top-24 size-96 rounded-full bg-emerald-200/40 blur-3xl dark:bg-emerald-900/30" />
         <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold text-emerald-700">
-            <Table2 className="size-3.5" /> Pilar 1 — Otomatisasi Operasional
+          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950/50 dark:text-emerald-300">
+            <Table2 className="size-3.5" /> Produk Digital — Otomatisasi Operasional
           </span>
-          <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-zinc-900 sm:text-5xl">
+          <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-zinc-900 sm:text-5xl dark:text-white">
             Katalog Template Spreadsheet{" "}
             <span className="text-gradient">Siap Pakai</span>
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg dark:text-zinc-400">
             Pilih template sesuai kebutuhan, isi kolom berwarna, dan biarkan
             rumus bekerja. Tidak perlu belajar formula rumit — cocok untuk
             pemilik usaha yang ingin hasil instan.
@@ -57,9 +57,9 @@ export default async function TemplatePage(props: PageProps<"/template">) {
               return (
                 <span
                   key={item.label}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-400"
                 >
-                  <Icon className="size-4 text-emerald-600" />
+                  <Icon className="size-4 text-emerald-600 dark:text-emerald-400" />
                   {item.label}
                 </span>
               );
@@ -68,11 +68,11 @@ export default async function TemplatePage(props: PageProps<"/template">) {
         </div>
       </section>
 
-      <section className="bg-white py-10">
+      <section className="bg-white py-10 dark:bg-zinc-950">
         <CatalogBrowser initialCategory={initialCategory} />
       </section>
 
-      <section className="bg-white pb-20">
+      <section className="bg-white pb-20 dark:bg-zinc-950">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-600 to-emerald-800 px-6 py-10 sm:px-10">
             <div className="pointer-events-none absolute -right-10 -top-10 size-56 rounded-full bg-white/10 blur-2xl" />
@@ -101,13 +101,13 @@ export default async function TemplatePage(props: PageProps<"/template">) {
         </div>
       </section>
 
-      <section className="bg-zinc-50 py-20">
+      <section className="bg-zinc-50 py-20 dark:bg-zinc-900/40">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-8 max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
               Punya alur kerja unik? Kami buatkan khusus
             </h2>
-            <p className="mt-4 text-zinc-600">
+            <p className="mt-4 text-zinc-600 dark:text-zinc-400">
               Tim kami siap membangun template Google Sheets yang disesuaikan
               dengan SOP bisnis Anda.
             </p>

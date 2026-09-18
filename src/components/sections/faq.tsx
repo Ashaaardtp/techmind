@@ -29,13 +29,13 @@ const FAQS = [
 
 export function Faq() {
   return (
-    <section id="faq" className="scroll-mt-20 bg-zinc-50 py-20 sm:py-24">
+    <section id="faq" className="scroll-mt-20 bg-zinc-50 py-20 sm:py-24 dark:bg-zinc-900/40">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-400">
             FAQ
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
             Pertanyaan yang sering ditanyakan
           </h2>
         </div>
@@ -44,13 +44,13 @@ export function Faq() {
           {FAQS.map((faq) => (
             <details
               key={faq.q}
-              className="group rounded-2xl border border-zinc-200 bg-white p-5 transition-colors open:border-brand-200"
+              className="group rounded-2xl border border-zinc-200 bg-white p-5 transition-colors open:border-brand-200 dark:border-zinc-800 dark:bg-zinc-900 dark:open:border-brand-800"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-sm font-semibold text-zinc-900">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-sm font-semibold text-zinc-900 dark:text-white">
                 {faq.q}
                 <ChevronDown className="size-5 shrink-0 text-zinc-400 transition-transform group-open:rotate-180" />
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-600">
+              <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
                 {faq.a}
               </p>
             </details>
