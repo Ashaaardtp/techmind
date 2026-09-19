@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AtSign, Mail, MapPin, MessageCircle } from "lucide-react";
+import { AtSign, Mail, MapPin, MessageCircle, Music2 } from "lucide-react";
 import { SITE, WA_MESSAGES, waLink } from "@/config";
 
 const FOOTER_LINKS = [
@@ -105,10 +105,29 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <span className="inline-flex items-center gap-1.5">
-              <Mail className="size-4" /> {SITE.email}
+              <Music2 className="size-4" />{" "}
+              <a
+                href={`https://www.tiktok.com/${SITE.tiktok}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-white"
+              >
+                {SITE.tiktok}
+              </a>
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <AtSign className="size-4" /> {SITE.instagram}
+              <AtSign className="size-4" />{" "}
+              <a
+                href={`https://www.instagram.com/${SITE.instagram.replace("@", "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-white"
+              >
+                {SITE.instagram}
+              </a>
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Mail className="size-4" /> {SITE.email}
             </span>
             <span className="inline-flex items-center gap-1.5">
               <MapPin className="size-4" /> {SITE.city}

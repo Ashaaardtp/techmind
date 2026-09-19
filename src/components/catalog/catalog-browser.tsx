@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   CheckCircle2,
@@ -78,9 +79,18 @@ export function CatalogBrowser({
   const [selected, setSelected] = useState<string[]>([]);
   const [preview, setPreview] = useState<Template | null>(null);
 
+  const visibleCategories = useMemo(
+    () =>
+      TEMPLATE_CATEGORIES.filter((cat) =>
+        TEMPLATES.some((t) => t.image && t.category === cat.name),
+      ),
+    [],
+  );
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return TEMPLATES.filter((tpl) => {
+      if (!tpl.image) return false;
       const matchCategory = category === "Semua" || tpl.category === category;
       const matchQuery =
         !q ||
@@ -137,7 +147,7 @@ export function CatalogBrowser({
             active={category === "Semua"}
             onClick={() => setCategory("Semua")}
           />
-          {TEMPLATE_CATEGORIES.map((cat) => (
+          {visibleCategories.map((cat) => (
             <CategoryChip
               key={cat.name}
               label={cat.name}
@@ -178,6 +188,20 @@ export function CatalogBrowser({
                     : "border-zinc-200 dark:border-zinc-800"
                 }`}
               >
+                <div className="relative h-36 overflow-hidden bg-gradient-to-br from-zinc-100 to-zinc-50 sm:h-40 dark:from-zinc-800 dark:to-zinc-900">
+                  {tpl.image && (
+                    <>
+                      <Image
+                        src={tpl.image}
+                        alt={tpl.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover opacity-80 transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-white/70 to-transparent dark:from-zinc-900/70" />
+                    </>
+                  )}
+                </div>
                 {tpl.isBundle && (
                   <span className="absolute right-4 top-4 z-10 inline-flex items-center gap-1 rounded-full bg-zinc-900 px-3 py-1 text-[11px] font-bold text-white dark:bg-white dark:text-zinc-900">
                     <Sparkles className="size-3" /> PALING HEMAT

@@ -19,6 +19,7 @@ export type Template = {
   popular?: boolean;
   isBundle?: boolean;
   accent: "emerald" | "sky" | "amber" | "violet" | "rose";
+  image?: string;
 };
 
 export const TEMPLATE_CATEGORIES: {
@@ -68,6 +69,7 @@ export const TEMPLATES: Template[] = [
     ],
     popular: true,
     accent: "emerald",
+    image: "/Laporan Penjualan.jpg",
   },
   {
     id: "tpl-stok",
@@ -89,6 +91,7 @@ export const TEMPLATES: Template[] = [
     ],
     popular: true,
     accent: "sky",
+    image: "/Stock Barang.jpg",
   },
   {
     id: "tpl-gaji",
@@ -109,6 +112,7 @@ export const TEMPLATES: Template[] = [
       "Panduan input berwarna",
     ],
     accent: "violet",
+    image: "/Gaji Karyawan.jpg",
   },
   {
     id: "tpl-absensi",
@@ -129,6 +133,7 @@ export const TEMPLATES: Template[] = [
       "Kompatibel dengan template gaji",
     ],
     accent: "amber",
+    image: "/Gaji Karyawan.jpg",
   },
   {
     id: "tpl-keuangan",
@@ -150,6 +155,7 @@ export const TEMPLATES: Template[] = [
     ],
     popular: true,
     accent: "emerald",
+    image: "/Laporan Penjualan.jpg",
   },
   {
     id: "tpl-faktur",
@@ -170,6 +176,7 @@ export const TEMPLATES: Template[] = [
       "Termin pembayaran fleksibel",
     ],
     accent: "rose",
+    image: "/Kitab Formula.jpg",
   },
   {
     id: "tpl-margin",
@@ -190,6 +197,7 @@ export const TEMPLATES: Template[] = [
       "Ringan & cepat dibuka",
     ],
     accent: "sky",
+    image: "/Kitab Formula.jpg",
   },
   {
     id: "tpl-event",

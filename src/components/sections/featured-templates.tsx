@@ -24,7 +24,7 @@ const accentClasses: Record<string, string> = {
 };
 
 export function FeaturedTemplates() {
-  const featured = TEMPLATES.filter((t) => t.popular).slice(0, 3);
+  const featured = TEMPLATES.filter((t) => t.popular && t.image).slice(0, 3);
 
   return (
     <section className="bg-white py-20 sm:py-24 dark:bg-zinc-950">
@@ -59,8 +59,8 @@ export function FeaturedTemplates() {
             >
               <div className="relative h-40 overflow-hidden bg-gradient-to-br from-zinc-100 to-zinc-50 dark:from-zinc-800 dark:to-zinc-900">
                 <Image
-                  src="/pawel-czerwinski-Y8Y_s90SK3A-unsplash.jpg"
-                  alt=""
+                  src={tpl.image ?? "/pawel-czerwinski-Y8Y_s90SK3A-unsplash.jpg"}
+                  alt={tpl.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"

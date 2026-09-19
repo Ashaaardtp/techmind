@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   BadgeCheck,
   FileSpreadsheet,
@@ -102,17 +103,39 @@ export default async function TemplatePage(props: PageProps<"/template">) {
       </section>
 
       <section className="bg-zinc-50 py-20 dark:bg-zinc-900/40">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-8 max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
-              Punya alur kerja unik? Kami buatkan khusus
-            </h2>
-            <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-              Tim kami siap membangun template Google Sheets yang disesuaikan
-              dengan SOP bisnis Anda.
-            </p>
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div className="relative hidden overflow-hidden rounded-3xl border border-zinc-200 shadow-sm lg:block dark:border-zinc-800">
+            <div className="relative aspect-[4/3]">
+              <Image
+                src="/Custom Template.jpg"
+                alt="Kustomisasi template Google Sheets sesuai SOP bisnis"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/90 p-4 backdrop-blur dark:bg-zinc-950/85">
+              <p className="text-sm font-bold text-zinc-900 dark:text-white">
+                Template sesuai SOP Anda
+              </p>
+              <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                Laporan otomatis, dashboard custom, hingga alur kerja unik
+                bisnis Anda.
+              </p>
+            </div>
           </div>
-          <CustomSheetForm />
+          <div>
+            <div className="mb-8 max-w-2xl">
+              <h2 className="text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
+                Punya alur kerja unik? Kami buatkan khusus
+              </h2>
+              <p className="mt-4 text-zinc-600 dark:text-zinc-400">
+                Tim kami siap membangun template Google Sheets yang disesuaikan
+                dengan SOP bisnis Anda.
+              </p>
+            </div>
+            <CustomSheetForm />
+          </div>
         </div>
       </section>
     </>

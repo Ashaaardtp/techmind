@@ -4,7 +4,7 @@ import { WA_MESSAGES, waLink } from "@/config";
 
 export function CtaBand() {
   return (
-    <section className="bg-white pb-20 sm:pb-24 dark:bg-zinc-950">
+    <section className="bg-white pt-20 pb-20 sm:pt-20 sm:pb-24 dark:bg-zinc-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-700 via-brand-600 to-violet-600 px-6 py-14 text-center shadow-2xl shadow-brand-600/25 sm:px-12 sm:py-16">
           <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:40px_40px]" />

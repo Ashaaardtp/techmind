@@ -4,12 +4,13 @@ export const SITE = {
   tagline: "Solusi Digital Lengkap untuk Tumbuh Kembangkan UMKM Anda",
   description:
     "Mitra solusi digital serba ada untuk UMKM: jasa pembuatan website & landing page, undangan digital, template spreadsheet otomatis, dan e-book edukasi.",
-  whatsappNumber: "6289509135859",
-  whatsappDisplay: "+62 895-0913-5859",
-  whatsappNumberLocal: "0895-0913-5859",
+  whatsappNumber: "6289676993886",
+  whatsappDisplay: "+62 896-7699-3886",
+  whatsappNumberLocal: "0896-7699-3886",
   email: "halo@techmind.id",
-  instagram: "@techmind.digital",
-  city: "Jakarta, Indonesia",
+  instagram: "@Techmind_id",
+  tiktok: "@Techmind.id",
+  city: "Bandung, Indonesia",
   foundedYear: 2023,
 } as const;
 
