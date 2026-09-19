@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { WEB_SERVICES } from "@/data/services";
 import { formatIDR, WA_MESSAGES, waLink } from "@/config";
+import { Reveal } from "@/components/reveal";
 
 const ICONS = {
   monitor: MonitorSmartphone,
@@ -50,7 +51,7 @@ export function WebShowcase() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div className="max-w-2xl">
+          <Reveal className="max-w-2xl">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-400">
               <Globe className="size-4" /> Layanan Jasa — Website &amp; Landing Page
             </span>
@@ -61,25 +62,27 @@ export function WebShowcase() {
               Landing page template siap pakai, company profile yang bikin
               bisnis dipercaya, hingga undangan digital yang praktis dan elegan.
             </p>
-          </div>
-          <Link
-            href="/jasa-web"
-            className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-zinc-900 transition-all hover:bg-zinc-200"
-          >
-            Lihat portofolio & harga
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-          </Link>
+          </Reveal>
+          <Reveal delay={100}>
+            <Link
+              href="/jasa-web"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-zinc-900 transition-all hover:bg-zinc-200"
+            >
+              Lihat portofolio & harga
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </Reveal>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          {WEB_SERVICES.map((service) => {
+          {WEB_SERVICES.map((service, index) => {
             const Icon = ICONS[service.icon];
             const visual = VISUALS[service.id];
             return (
-              <article
-                key={service.id}
-                className="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-white/25"
-              >
+              <Reveal key={service.id} delay={index * 80}>
+                <article
+                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-white/25"
+                >
                 <div className="relative h-44 overflow-hidden">
                   <Image
                     src={visual.src}
@@ -133,11 +136,13 @@ export function WebShowcase() {
                   </div>
                 </div>
               </article>
+              </Reveal>
             );
           })}
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 sm:flex-row">
+        <Reveal delay={120}>
+          <div className="mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 sm:flex-row">
           <p className="text-sm text-zinc-300">
             Belum yakin mau yang mana? Ceritakan kebutuhan bisnis Anda, kami
             bantu rekomendasikan.
@@ -150,7 +155,8 @@ export function WebShowcase() {
           >
             <MessageCircle className="size-4" /> Konsultasi Gratis
           </a>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

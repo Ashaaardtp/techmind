@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import { WA_MESSAGES, waLink } from "@/config";
+import { Reveal } from "@/components/reveal";
 
 export function CtaBand() {
   return (
@@ -10,7 +11,7 @@ export function CtaBand() {
           <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:40px_40px]" />
           <div className="pointer-events-none absolute -right-16 -top-16 size-64 rounded-full bg-white/20 blur-3xl" />
 
-          <div className="relative mx-auto max-w-2xl">
+          <Reveal className="relative mx-auto max-w-2xl">
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Siap Bawa Bisnis UMKM Anda Naik Kelas?
             </h2>
@@ -35,7 +36,7 @@ export function CtaBand() {
                 Lihat Layanan
               </Link>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

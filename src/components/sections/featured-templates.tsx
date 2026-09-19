@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { TEMPLATES } from "@/data/templates";
 import { formatIDR, waLink } from "@/config";
+import { Reveal } from "@/components/reveal";
 
 const accentClasses: Record<string, string> = {
   emerald:
@@ -30,7 +31,7 @@ export function FeaturedTemplates() {
     <section className="bg-white py-20 sm:py-24 dark:bg-zinc-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div className="max-w-2xl">
+          <Reveal className="max-w-2xl">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400">
               <Table2 className="size-4" /> Produk Digital — Template Terlaris
             </span>
@@ -41,22 +42,24 @@ export function FeaturedTemplates() {
               Produk paling banyak dibeli pelaku usaha. Sekali bayar, bebas
               dipakai selamanya di Excel maupun Google Sheets.
             </p>
-          </div>
-          <Link
-            href="/template"
-            className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-800 transition-all hover:border-zinc-400 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:border-zinc-600 dark:hover:bg-zinc-800"
-          >
-            Lihat semua template
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-          </Link>
+          </Reveal>
+          <Reveal delay={100}>
+            <Link
+              href="/template"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-800 transition-all hover:border-zinc-400 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:border-zinc-600 dark:hover:bg-zinc-800"
+            >
+              Lihat semua template
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </Reveal>
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {featured.map((tpl) => (
-            <article
-              key={tpl.id}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-emerald-200 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-emerald-800"
-            >
+          {featured.map((tpl, index) => (
+            <Reveal key={tpl.id} delay={index * 90}>
+              <article
+                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-emerald-200 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-emerald-800"
+              >
               <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-zinc-100 to-zinc-50 dark:from-zinc-800 dark:to-zinc-900">
                 <Image
                   src={tpl.image ?? "/pawel-czerwinski-Y8Y_s90SK3A-unsplash.jpg"}
@@ -126,6 +129,7 @@ export function FeaturedTemplates() {
                 </div>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
       </div>

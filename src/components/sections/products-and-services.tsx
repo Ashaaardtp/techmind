@@ -7,6 +7,7 @@ import {
   Globe,
   Table2,
 } from "lucide-react";
+import { Reveal } from "@/components/reveal";
 
 const SERVICES = [
   {
@@ -74,47 +75,57 @@ export function ProductsAndServices() {
     <section id="layanan" className="scroll-mt-20 bg-white py-20 sm:py-24 dark:bg-zinc-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-400">
-            Layanan &amp; Produk Kami
-          </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
-            Solusi digital yang langsung terasa hasilnya
-          </h2>
-          <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-            Baik yang butuh jasa custom maupun produk siap pakai, semuanya
-            dirancang agar langsung bisa digunakan.
-          </p>
+          <Reveal>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-400">
+              Layanan &amp; Produk Kami
+            </p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
+              Solusi digital yang langsung terasa hasilnya
+            </h2>
+            <p className="mt-4 text-zinc-600 dark:text-zinc-400">
+              Baik yang butuh jasa custom maupun produk siap pakai, semuanya
+              dirancang agar langsung bisa digunakan.
+            </p>
+          </Reveal>
         </div>
 
         <div className="mt-14 space-y-12">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700 dark:bg-brand-950/60 dark:text-brand-300">
-                A
-              </span>
-              <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
-                Layanan Jasa Digital
-              </h3>
-            </div>
+            <Reveal>
+              <div className="flex items-center gap-3">
+                <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700 dark:bg-brand-950/60 dark:text-brand-300">
+                  A
+                </span>
+                <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
+                  Layanan Jasa Digital
+                </h3>
+              </div>
+            </Reveal>
             <div className="mt-5 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {jasa.map((item) => (
-                <ServiceCard key={item.title} item={item} />
+              {jasa.map((item, index) => (
+                <Reveal key={item.title} delay={index * 80}>
+                  <ServiceCard item={item} />
+                </Reveal>
               ))}
             </div>
           </div>
 
           <div>
-            <div className="flex items-center gap-3">
-              <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">
-                B
-              </span>
-              <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
-                Produk Digital Siap Pakai
-              </h3>
-            </div>
+            <Reveal delay={80}>
+              <div className="flex items-center gap-3">
+                <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">
+                  B
+                </span>
+                <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
+                  Produk Digital Siap Pakai
+                </h3>
+              </div>
+            </Reveal>
             <div className="mt-5 grid gap-6 md:grid-cols-2">
-              {produk.map((item) => (
-                <ServiceCard key={item.title} item={item} />
+              {produk.map((item, index) => (
+                <Reveal key={item.title} delay={index * 80}>
+                  <ServiceCard item={item} />
+                </Reveal>
               ))}
             </div>
           </div>
@@ -131,7 +142,7 @@ function ServiceCard({
 }) {
   const Icon = item.icon;
   return (
-    <article className="group flex flex-col rounded-3xl border border-zinc-200 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl sm:p-8 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-brand-800">
+    <article className="group flex h-full flex-col rounded-3xl border border-zinc-200 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl sm:p-8 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-brand-800">
       <div className="flex items-start gap-4">
         <span className={`grid size-12 shrink-0 place-items-center rounded-2xl ${item.accent}`}>
           <Icon className="size-6" />

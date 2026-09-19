@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import { Reveal } from "@/components/reveal";
 
 const FAQS = [
   {
@@ -32,16 +33,19 @@ export function Faq() {
     <section id="faq" className="scroll-mt-20 bg-zinc-50 py-20 sm:py-24 dark:bg-zinc-900/40">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-400">
-            FAQ
-          </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
-            Pertanyaan yang sering ditanyakan
-          </h2>
+          <Reveal>
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-400">
+              FAQ
+            </span>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
+              Pertanyaan yang sering ditanyakan
+            </h2>
+          </Reveal>
         </div>
 
         <div className="mt-10 space-y-3">
-          {FAQS.map((faq) => (
+          {FAQS.map((faq, index) => (
+            <Reveal key={faq.q} delay={index * 60}>
             <details
               key={faq.q}
               className="group rounded-2xl border border-zinc-200 bg-white p-5 transition-colors open:border-brand-200 dark:border-zinc-800 dark:bg-zinc-900 dark:open:border-brand-800"
@@ -54,6 +58,7 @@ export function Faq() {
                 {faq.a}
               </p>
             </details>
+            </Reveal>
           ))}
         </div>
       </div>

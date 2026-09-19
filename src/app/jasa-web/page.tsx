@@ -18,6 +18,7 @@ import { PricingTable } from "@/components/web/pricing-table";
 import { BriefForm } from "@/components/web/brief-form";
 import { WEB_SERVICES } from "@/data/services";
 import { formatIDR, waLink } from "@/config";
+import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
   title: "Jasa Pembuatan Website, Landing Page, Company Profile & Undangan Digital",
@@ -70,7 +71,7 @@ export default function JasaWebPage() {
         <div className="pointer-events-none absolute -left-32 top-0 size-[32rem] rounded-full bg-brand-600/40 blur-3xl" />
         <div className="pointer-events-none absolute -right-32 bottom-0 size-[32rem] rounded-full bg-violet-600/30 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-          <div className="max-w-3xl">
+          <Reveal className="max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-400/40 bg-brand-500/10 px-3.5 py-1.5 text-xs font-semibold text-brand-300">
               <Globe className="size-3.5" /> Layanan Jasa — Jasa Website
             </span>
