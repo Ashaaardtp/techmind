@@ -57,15 +57,14 @@ export function FeaturedTemplates() {
               key={tpl.id}
               className="group flex flex-col overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-emerald-200 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-emerald-800"
             >
-              <div className="relative h-40 overflow-hidden bg-gradient-to-br from-zinc-100 to-zinc-50 dark:from-zinc-800 dark:to-zinc-900">
+              <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-zinc-100 to-zinc-50 dark:from-zinc-800 dark:to-zinc-900">
                 <Image
                   src={tpl.image ?? "/pawel-czerwinski-Y8Y_s90SK3A-unsplash.jpg"}
                   alt={tpl.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent dark:from-zinc-900/80" />
                 <div className="absolute left-4 top-4 flex flex-wrap gap-2">
                   <span
                     className={`rounded-full border px-2.5 py-1 text-[11px] font-semibold ${

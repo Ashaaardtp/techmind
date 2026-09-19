@@ -105,7 +105,7 @@ export default async function TemplatePage(props: PageProps<"/template">) {
       <section className="bg-zinc-50 py-20 dark:bg-zinc-900/40">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative hidden overflow-hidden rounded-3xl border border-zinc-200 shadow-sm lg:block dark:border-zinc-800">
-            <div className="relative aspect-[4/3]">
+            <div className="relative aspect-square">
               <Image
                 src="/Custom Template.jpg"
                 alt="Kustomisasi template Google Sheets sesuai SOP bisnis"

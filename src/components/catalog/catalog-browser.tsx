@@ -188,7 +188,7 @@ export function CatalogBrowser({
                     : "border-zinc-200 dark:border-zinc-800"
                 }`}
               >
-                <div className="relative h-36 overflow-hidden bg-gradient-to-br from-zinc-100 to-zinc-50 sm:h-40 dark:from-zinc-800 dark:to-zinc-900">
+                <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-zinc-100 to-zinc-50 dark:from-zinc-800 dark:to-zinc-900">
                   {tpl.image && (
                     <>
                       <Image
@@ -196,9 +196,8 @@ export function CatalogBrowser({
                         alt={tpl.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover opacity-80 transition-transform duration-500 group-hover:scale-105"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-white/70 to-transparent dark:from-zinc-900/70" />
                     </>
                   )}
                 </div>
